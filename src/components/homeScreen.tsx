@@ -1,10 +1,12 @@
 import { VFC } from "react";
-import { Text, View } from "react-native";
+import { Button, Text, View } from "react-native";
+import { HomeScreenProps } from "../types/rootType";
 
-const HomeScreen: VFC = () => {
+const HomeScreen: VFC<HomeScreenProps> = ({ navigation, route }) => {
 	return (
 		<View>
-			<Text>home</Text>
+			<Text>ホーム画面</Text>
+			<Button title="ユーザー" onPress={() => navigation.navigate("User", { userId: "1" })} />
 		</View>
 	);
 };
